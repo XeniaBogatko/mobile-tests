@@ -1,4 +1,4 @@
-package tests;
+package tests.android.browserstack_sample;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
