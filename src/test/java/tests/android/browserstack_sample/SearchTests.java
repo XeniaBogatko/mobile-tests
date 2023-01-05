@@ -1,5 +1,6 @@
 package tests.android.browserstack_sample;
 
+import com.codeborne.selenide.Selenide;
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
@@ -44,9 +45,14 @@ public class SearchTests extends TestBase {
         });
         step("Verify content found", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0)));
-        step("Choose page", () ->
-            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click());
+        step("Choose page", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click();
+            Selenide.back();
+            $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).click();
+
+        });
         step("Verify opened page", () ->
                 $(AppiumBy.className("android.widget.TextView")).shouldHave(text("Selenide")));
     }
 }
+//android.view.View android.widget.TextView
