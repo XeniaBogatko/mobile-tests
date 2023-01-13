@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -39,6 +40,21 @@ public class SearchTests extends TestBase {
 
         });
         step("Verify opened page", () ->
-                $(AppiumBy.className("android.widget.TextView")).shouldHave(text("Selenide")));
+                $(AppiumBy.className("android.webkit.WebView")).shouldHave(text("Selenide")));
+               // $(AppiumBy.className("android.widget.TextView")).shouldHave(text("Selenide")));
+    }
+
+    @Test
+    void addLanguage() throws MalformedURLException, InterruptedException {
+        step("Skip onboarding pages", () -> back());
+        step("Type search", () ->
+                $(AppiumBy.accessibilityId("Search Wikipedia")).click());
+        step("Add new language", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_lang_button")).click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/wiki_language_title")).findBy(text("ADD LANGUAGE")).click();
+            $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name")).findBy(text("Deutsch")).click();
+        });
+        step("Verify added language", () ->
+                $$(AppiumBy.className("android.widget.TextView")).findBy(text("Deutsch")).shouldBe(visible));
     }
 }
