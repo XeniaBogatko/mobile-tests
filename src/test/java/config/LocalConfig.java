@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
         "classpath:local.properties"
 })
 
-public interface LocalConfig extends Config{
+public interface LocalConfig extends Config {
 
     @Key("platformName")
     @DefaultValue("android")

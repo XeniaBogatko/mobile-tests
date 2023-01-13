@@ -21,6 +21,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
             throw new RuntimeException(e);
         }
     }
+
     @SneakyThrows
     @Override
     public WebDriver createDriver(Capabilities capabilities) {

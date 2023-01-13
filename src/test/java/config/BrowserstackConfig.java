@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
         "classpath:browserstack.properties"
 })
 
-public interface BrowserstackConfig extends Config{
+public interface BrowserstackConfig extends Config {
 
     String username();
 

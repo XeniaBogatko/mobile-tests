@@ -15,6 +15,7 @@ public class Attach {
     public static String attachAsText(String attachName, String message) {
         return message;
     }
+
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
@@ -31,7 +32,8 @@ public class Attach {
                 + BrowserStack.getVideoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
     }
-    public static String getSessionId(){
+
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 }

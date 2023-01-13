@@ -9,18 +9,20 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 
 public class TestBase {
     public static String testType = System.getProperty("testType");
+
     @BeforeAll
     public static void setup() {
         if (testType == null) {
             testType = "local";
         }
-// gradle clean test -DtestType=browserstack/local
+        // gradle clean test -DtestType=browserstack/local
         switch (testType) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
@@ -31,7 +33,6 @@ public class TestBase {
                 System.out.println("remote test start");
                 break;
         }
-
         Configuration.browserSize = null;
     }
 
