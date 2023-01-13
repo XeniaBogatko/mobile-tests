@@ -88,12 +88,7 @@ gradle clean test
 
 ## <img width="4%" title="Selenoid" src="media/logo/Browserstack.svg"> Mobile Test running example in Browserstack
 
-К каждому тесту в отчете прилагается видео.
-
-На данном видео выполняется:
-
-- Проверка соотвествия страницы статьи заданным параметрам поиска
-
+A video is attached to each test in the report.
 
 <p align="center">
   <img title="Browserstack Video" src="media/video/mobile.gif">
