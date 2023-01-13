@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.AuthConfig;
+import config.BrowserstackConfig;
 import lombok.SneakyThrows;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -24,7 +24,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @SneakyThrows
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+        BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 

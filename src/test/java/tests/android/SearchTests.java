@@ -1,7 +1,8 @@
-package tests.android.local;
+package tests.android;
 
 import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Test;
+import tests.android.TestBase;
 
 import java.net.MalformedURLException;
 
@@ -41,7 +42,6 @@ public class SearchTests extends TestBase {
         });
         step("Verify opened page", () ->
                 $(AppiumBy.className("android.webkit.WebView")).shouldHave(text("Selenide")));
-               // $(AppiumBy.className("android.widget.TextView")).shouldHave(text("Selenide")));
     }
 
     @Test

@@ -3,17 +3,13 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:auth.properties"
+        "classpath:browserstack.properties"
 })
 
-public interface AuthConfig extends Config{
+public interface BrowserstackConfig extends Config{
 
-    @Key("username")
-    @DefaultValue("kseniiabogatko_gbDJ2A")
     String username();
 
-    @Key("password")
-    @DefaultValue("VdRu6UvRq8ojJYKpyy5b")
     String password();
 
     @Key("bs")
@@ -27,4 +23,5 @@ public interface AuthConfig extends Config{
     @Key("osVersion")
     @DefaultValue("9.0")
     String osVersion();
+
 }

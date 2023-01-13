@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.AuthConfig;
+import config.LocalConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import lombok.SneakyThrows;
@@ -18,7 +18,7 @@ import java.net.URL;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-public class MobileDriver implements WebDriverProvider {
+public class LocalMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
@@ -31,14 +31,14 @@ public class MobileDriver implements WebDriverProvider {
     @SneakyThrows
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
-        AuthConfig config = ConfigFactory.create(AuthConfig.class, System.getProperties());
+        LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
-                .setPlatformName("android")
-                .setDeviceName("Pixel 4 API 30")
-                .setPlatformVersion("11.0")
+                .setPlatformName(config.platformName())
+                .setDeviceName(config.deviceName())
+                .setPlatformVersion(config.osVersion())
                 .setApp(getAppPath())
                 .setAppPackage("org.wikipedia.alpha")
                 .setAppActivity("org.wikipedia.main.MainActivity");
