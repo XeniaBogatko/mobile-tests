@@ -48,43 +48,41 @@ gradle clean test
 -DtestType=local
 ```
 
-## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Running tests in [Jenkins](https://jenkins.autotests.cloud/job/)
+## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Running tests in [Jenkins](https://jenkins.autotests.cloud/job/xenia_mobile_tests/)
 
-Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать*</strong></code>.
+Click the button <code><strong>*Собрать*</strong></code> to start the build.
 
 <p align="center">
   <img src="media/jenkins.png" alt="Jenkins" width="800">
 </p>
 
-После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
-значок *Allure Report*, кликнув по которому, откроется страница с сформированным html-отчетом.
+After build is completed, in the <code><strong>*Builds history*</strong></code> opposite the build number will appear the *Allure Report* icon, clicking on which will open the page with the generated html-report.
 
-## <img width="4%" title="Allure Report" src="media/logo/Allure.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/)
+## <img width="4%" title="Allure Report" src="media/logo/Allure.svg"> Test results report in [Allure Report](https://jenkins.autotests.cloud/job/xenia_mobile_tests/7/allure/)
 
 <p align="center">
   <img src="media/allure-report.png" alt="allure-report1" width="900">
 </p>
 
+## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Integration with [Allure TestOps](https://allure.autotests.cloud/launch/18302)
 
-## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Integration with [Allure TestOps](https://allure.autotests.cloud/launch/18294)
-
-### Основной дашборд
+### Main dashboard
 
 <p align="center">
   <img src="media/dashboard.png" alt="dashboard" width="900">
 </p>
 
-### Список тестов с результатами прогона
+### List of tests with run results
 
 <p align="center">
-  <img src="media/tree.png" alt="dashboard" width="900">
+  <img src="media/tree.png" alt="tree" width="900">
 </p>
 
 ## <img width="4%" title="Telegram" src="media/logo/Telegram.svg"> Telegram notifications using a bot
-После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
+After the build is completed, a special bot created in Telegram, automatically processes and sends a test run report message.
 
 <p align="center">
-<img title="Telegram Notifications" src="media/telegram.png">
+<img title="Telegram Notifications" src="media/telegram-result.png">
 
 ## <img width="4%" title="Selenoid" src="media/logo/Browserstack.svg"> Mobile Test running example in Browserstack
 
