@@ -50,7 +50,7 @@ gradle clean test
 
 ## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Running tests in [Jenkins](https://jenkins.autotests.cloud/job/xenia_mobile_tests/)
 
-Click the button <code><strong>*Собрать*</strong></code> to start the build.
+Click the button <code><strong>*Collect*</strong></code> to start the build.
 
 <p align="center">
   <img src="media/jenkins.png" alt="Jenkins" width="800">
